@@ -25,11 +25,19 @@ app.post("/api", async (req, res) => {
       })
     });
 
-    const data = await response.json();
+const data = await response.json();
 
-    res.json({
-      respuesta: data.choices[0].message.content
-    });
+console.log(data);
+
+if(data.error){
+  return res.json({
+    respuesta: "ERROR OPENAI: " + data.error.message
+  });
+}
+
+res.json({
+  respuesta: data.choices[0].message.content
+});
 
   } catch (error) {
     console.log(error);
