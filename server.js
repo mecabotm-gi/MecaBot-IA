@@ -17,7 +17,7 @@ app.post("/api", async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer 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"
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
