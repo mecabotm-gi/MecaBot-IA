@@ -17,7 +17,7 @@ app.post("/api", async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": 'Bearer ${process.env.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'
+         "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
@@ -38,7 +38,6 @@ if(data.error){
 res.json({
   respuesta: data.choices[0].message.content
 });
-
   } catch (error) {
     console.log(error);
 
